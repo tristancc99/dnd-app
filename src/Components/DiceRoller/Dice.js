@@ -13,11 +13,18 @@ function Dice(props) {
     props.rem(data.id);
   }
 
+  function reRoll(e) {
+    if (e.target.className == "reRoll") {
+      let roll = Math.floor(Math.random() * (data.sides - 1 + 1)) + 1;
+      props.re(roll, data.id);
+    }
+  }
+
   return (
     <Card bg="dark" text="white" style={{ width: "16rem" }}>
-      <Card.Body>
+      <Card.Body onClick={reRoll}>
         <Card.Title>
-          <h1>D{data.sides}</h1>
+          <h1 className="reRoll">D{data.sides}</h1>
         </Card.Title>
         <Card.Subtitle className="mb-3">
           rolled a <b>{data.roll}</b>

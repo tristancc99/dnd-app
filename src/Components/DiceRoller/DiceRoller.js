@@ -29,7 +29,18 @@ function DiceRoller() {
     temp.splice(remId, 1);
     setDice([...temp]);
   }
-  console.log(dice);
+
+  function reRoll(newRoll, diceId) {
+    let temp = [...dice];
+    let match = temp.find(tempDie => tempDie.id == diceId);
+    match.roll = newRoll;
+    setDice([...temp]);
+  }
+
+  function clearAll() {
+    setDice([]);
+  }
+
   return (
     <div>
       <div className="header">Dice Roller</div>
@@ -40,13 +51,14 @@ function DiceRoller() {
             <Dice
               rem={removeDice}
               mod={updateModifier}
+              re={reRoll}
               diceData={die}
               key={die.id}
             />
           );
         })}
       </div>
-      <DiceStats diceData={dice} />
+      <DiceStats clr={clearAll} diceData={dice} />
     </div>
   );
 }

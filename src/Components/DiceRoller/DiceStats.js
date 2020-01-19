@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "react-bootstrap/Button";
 
 function DiceStats(props) {
   let data = props.diceData;
@@ -22,6 +23,9 @@ function DiceStats(props) {
         {modArr.join(" + ")})
       </p>
       <h3>Total is {rawTotal + modTotal}</h3>
+      <Button variant="secondary" onClick={props.clr}>
+        Clear All
+      </Button>
     </div>
   );
 }
