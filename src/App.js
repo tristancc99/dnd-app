@@ -12,9 +12,9 @@ import {
   useParams
 } from "react-router-dom";
 //Components
-import DiceRoller from "./Components/DiceRoller/DiceRoller";
-import InititativeTracker from "./Components/InitTracker/InititiativeTracker";
-import Spells from "./Components/Spells/Spells";
+import DiceRoller from "./Components/DiceRoller";
+import InititativeTracker from "./Components/InitiativeTracker";
+import Spells from "./Components/Spells";
 //App
 
 function App() {
