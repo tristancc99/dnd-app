@@ -14,6 +14,7 @@ export default function InitForm(props) {
     );
   };
 
+  // You're killing it!
   return (
     <div className="initform">
       <Form

@@ -6,6 +6,7 @@ import { array } from "prop-types";
 function InititativeTracker() {
   let [trackers, setTrackers] = useState([]);
 
+  // Inline this :) 
   function compare(a, b) {
     if (a.init > b.init) return -1;
     if (b.init > a.init) return 1;

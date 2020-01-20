@@ -2,15 +2,19 @@ import React from "react";
 
 function Trackee(props) {
   let data = props.data;
-  let colorType = data.type == "NPC" ? "red" : "green";
+  // === is better than ==
+  let colorType = data.type === "NPC" ? "red" : "green";
 
   function handleButton(e) {
     props.remove(data.id);
   }
 
+  // Don't be a heathen indentation is important :). 
   return (
     <li style={{ color: colorType }}>
-      Name : {data.name} || Initiative : {data.init} <input type="text"></input>
+      <span>Name : {data.name}</span>
+      <span>|| Initiative : {data.init} </span>
+      <input type="text" placeholder="let's put something meaningful here :)"></input>
       <button onClick={handleButton}>X</button>
     </li>
   );

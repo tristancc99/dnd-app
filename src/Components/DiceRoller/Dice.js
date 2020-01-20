@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 
 function Dice(props) {
-  // ALWAYS use const when you can. Then you ALWAYS use let. NEVER use var :)
+  // ALWAYS use const when you can. Then you ALWAYS use let. NEVER use var :) (unless you have to use var lol)
   // The reason being is that as a developer I have a strong understanding of the difference
   //  between the two so therefore if you declare a variable as let, I'm more aware of the potential
   //  side effects. If you don't remember the exact differences look it up!
