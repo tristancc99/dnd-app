@@ -1,6 +1,8 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
+// named export (Not default)
+import { availableDice } from './constants'
 
 function DiceForm(props) {
   function handleButton(e) {
@@ -10,30 +12,12 @@ function DiceForm(props) {
     props.update(sideCount, roll);
   }
 
+  const buttons = availableDice.map(d => <Button sides={d} variant="dark">{d}</Button>)
+
   return (
     <div className="d-flex flex-column">
       <ButtonGroup onClick={handleButton} size="lg">
-        <Button sides="20" variant="dark">
-          20
-        </Button>
-        <Button sides="12" variant="dark">
-          12
-        </Button>
-        <Button sides="10" variant="dark">
-          10
-        </Button>
-        <Button sides="8" variant="dark">
-          8
-        </Button>
-        <Button sides="6" variant="dark">
-          6
-        </Button>
-        <Button sides="4" variant="dark">
-          4
-        </Button>
-        <Button sides="2" variant="dark">
-          2
-        </Button>
+        {buttons}
       </ButtonGroup>
     </div>
   );

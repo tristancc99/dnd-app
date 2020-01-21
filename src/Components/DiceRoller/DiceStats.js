@@ -1,14 +1,15 @@
 import React from "react";
 import Button from "react-bootstrap/Button";
 
-function DiceStats(props) {
-  let data = props.diceData;
-  let modArr = [];
-  let rollArr = [];
+// consider a more precise name like clearDiceStats; readability / grokability is king
+function DiceStats({ diceData, clr: clearDiceStats }) {
+  // Consider making this state instead ;)
+  const modArr = [];
+  const rollArr = [];
   let rawTotal = 0;
   let modTotal = 0;
 
-  data.forEach(die => {
+  diceData.forEach(die => {
     modArr.push(die.modifier);
     modTotal += die.modifier;
     rollArr.push(die.roll);
@@ -23,7 +24,7 @@ function DiceStats(props) {
         {modArr.join(" + ")})
       </p>
       <h3>Total is {rawTotal + modTotal}</h3>
-      <Button variant="secondary" onClick={props.clr}>
+      <Button variant="secondary" onClick={clearDiceStats}>
         Clear All
       </Button>
     </div>
